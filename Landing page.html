@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ExploreTheWorld Travel Internship - Join CodeSoft's web development program to build amazing travel-themed projects">
+  <title>ExploreTheWorld | Travel Internship</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #fff);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #006064;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ff6f00;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover {
+      background: #e65100;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #00695c;
+      position: relative;
+    }
+
+    section h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #ff6f00;
+      margin: 15px auto;
+      border-radius: 2px;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .feature {
+      background: #f1f1f1;
+      padding: 30px;
+      width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature h3 {
+      margin-bottom: 15px;
+      color: #00695c;
+      font-size: 1.4rem;
+    }
+
+    #about {
+      background: #e8f5e9;
+    }
+
+    #about p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      font-size: 1.1rem;
+    }
+
+    #about strong {
+      color: #00695c;
+    }
+
+    #contact {
+      background: #e0f2f1;
+    }
+
+    #contact p {
+      max-width: 600px;
+      margin: 0 auto 15px;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+    }
+
+    footer {
+      background: #004d40;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .hero {
+        padding: 80px 15px;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ExploreTheWorld</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#features">Why Travel?</a></li>
+        <li><a href="#about">Internship</a></li>
+        <li><a href="#contact">Join Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Explore New Destinations & Culture</h2>
+      <p>Be a part of CodeSoft’s Web Development Internship and design exciting, travel-inspired websites like this one.</p>
+      <a href="#contact" class="btn">Let’s Get Started</a>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2>Why Work on Travel Projects?</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Engaging Layout</h3>
+        <p>Content that connects with people and keeps them interested.</p>
+      </div>
+      <div class="feature">
+        <h3>Beautiful Design</h3>
+        <p>Colors, images, and structure that bring travel vibes to life.</p>
+      </div>
+      <div class="feature">
+        <h3>Clear Goal</h3>
+        <p>One simple call-to-action—get users excited to take the next step.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About This Internship</h2>
+    <p>Join the <strong>CodeSoft</strong> internship and gain real experience by building creative, hands-on web projects.</p>
+    <p>This project is all about improving your design and development skills while having fun with a travel theme.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Let’s Connect</h2>
+    <p>Interested in joining or collaborating? We’d love to hear from you.</p>
+    <div class="contact-info">
+      <p>Email: travel@codesoft.dev</p>
+      <p>Phone: +91 9876543210</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ExploreTheWorld | Internship Program by CodeSoft</p>
+  </footer>
+</body>
+</html>
